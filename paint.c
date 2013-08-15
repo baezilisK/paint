@@ -4,6 +4,7 @@
 
 #define H 300
 #define W H
+#define ESC 0x1B
 
 int r = 1, g = 1, b = 1, mousex, mousey, mousexx, mouseyy, draw;
 
@@ -45,7 +46,7 @@ void mouse (int button, int state, int x, int y) {
 
 void keyboard (unsigned char key, int x, int y) {
   (void) x; (void) y;
-  if (key == '') exit (EXIT_SUCCESS);
+  if (key == ESC) exit (EXIT_SUCCESS);
   if (key == '$') glClear (GL_COLOR_BUFFER_BIT), glutPostRedisplay ();
   if (key == '{') r ^= 1;
   if (key == '}') g ^= 1;
